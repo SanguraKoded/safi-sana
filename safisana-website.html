@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safi Sana | Laundry & Cleaning, Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c1f7a;
+    --navy-deep:#12154f;
+    --sky:#48c3f0;
+    --sky-light:#bfeaff;
+    --pink:#f177a8;
+    --pink-light:#ffe1ee;
+    --cream:#f7fbff;
+    --ink:#12163a;
+    --ink-soft:#4a5178;
+    --white:#ffffff;
+    --radius:22px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Baloo 2', sans-serif;
+    margin:0;
+    line-height:1.1;
+  }
+  p{line-height:1.65;color:var(--ink-soft);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(28,31,122,0.08);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;}
+  .brand{font-size:1.5rem;font-weight:800;letter-spacing:-0.5px;}
+  .brand .safi{color:var(--navy);}
+  .brand .sana{color:var(--sky);}
+  .brand-tag{
+    display:inline-block;background:var(--pink);color:#fff;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:.55rem;
+    letter-spacing:.5px;padding:2px 7px;border-radius:5px;margin-left:8px;
+    vertical-align:middle;transform:translateY(-10px);
+  }
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{font-weight:600;font-size:.95rem;color:var(--navy);}
+  .nav-cta{
+    background:var(--navy);color:#fff;padding:10px 20px;border-radius:100px;
+    font-weight:700;font-size:.9rem;white-space:nowrap;
+  }
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  @media (max-width:820px){
+    .nav-links ul{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:radial-gradient(circle at 15% 20%, #262aa0 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:#fff;padding:76px 0 120px;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:2;}
+  .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.85), rgba(255,255,255,.08) 60%);opacity:.55;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+    padding:7px 14px;border-radius:100px;font-size:.8rem;font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero-badge span.dot{width:7px;height:7px;border-radius:50%;background:#5be48b;display:inline-block;}
+  .hero h1{font-size:3.1rem;font-weight:800;margin-bottom:20px;}
+  .hero h1 em{font-style:normal;color:var(--sky-light);}
+  .hero p.lede{color:#d9e0ff;font-size:1.1rem;max-width:480px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:100px;font-weight:700;font-size:.95rem;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--pink);color:#fff;box-shadow:0 10px 24px -8px rgba(241,119,168,.7);}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35);}
+  .hero-stats{display:flex;gap:34px;}
+  .hero-stats div strong{display:block;font-size:1.5rem;font-family:'Baloo 2';color:#fff;}
+  .hero-stats div span{font-size:.82rem;color:#c5cdf7;}
+  .hero-visual{
+    position:relative;border-radius:28px;overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
+    aspect-ratio:4/4.6;
+  }
+  .hero-visual img{width:100%;height:100%;object-fit:cover;}
+  .hero-visual .tag{
+    position:absolute;bottom:18px;left:18px;right:18px;
+    background:rgba(18,21,79,.72);backdrop-filter:blur(6px);
+    color:#fff;padding:14px 16px;border-radius:16px;font-size:.85rem;font-weight:600;
+  }
+  .wave-divider{
+    position:absolute;left:0;right:0;bottom:-1px;height:70px;
+    background:var(--cream);
+    -webkit-mask: radial-gradient(38px at 38px 0, transparent 98%, #000 100%) -38px 0/76px 100% repeat-x;
+    mask: radial-gradient(38px at 38px 0, transparent 98%, #000 100%) -38px 0/76px 100% repeat-x;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:88px 0;}
+  .eyebrow-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .kicker{color:var(--pink);font-weight:800;font-size:.85rem;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:2.3rem;color:var(--navy);}
+  .section-head p{margin-top:14px;font-size:1.05rem;}
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{
+    background:#fff;border-radius:var(--radius);overflow:hidden;
+    border:1px solid rgba(28,31,122,.08);
+    box-shadow:0 18px 40px -28px rgba(18,21,79,.4);
+    display:flex;flex-direction:column;
+  }
+  .service-card .photo{height:190px;overflow:hidden;position:relative;}
+  .service-card .photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .service-card:hover .photo img{transform:scale(1.06);}
+  .service-card .body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column;}
+  .service-card h3{font-size:1.25rem;color:var(--navy);margin-bottom:8px;}
+  .service-card p{font-size:.92rem;margin-bottom:14px;}
+  .service-card .from{margin-top:auto;font-weight:800;color:var(--pink);font-family:'Baloo 2';font-size:1.05rem;}
+  .service-card .from small{color:var(--ink-soft);font-family:'Inter';font-weight:600;font-size:.75rem;}
+  .service-tall{grid-column:span 2;}
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .service-tall{grid-column:span 2;}
+  }
+  @media (max-width:620px){
+    .services-grid{grid-template-columns:1fr;}
+    .service-tall{grid-column:span 1;}
+  }
+
+  /* ---------- Why us strip ---------- */
+  .why{background:var(--navy);color:#fff;}
+  .why .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .why-item .icon{
+    width:52px;height:52px;border-radius:14px;background:rgba(72,195,240,.18);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.4rem;
+  }
+  .why-item h3{font-size:1.05rem;margin-bottom:8px;color:#fff;}
+  .why-item p{color:#c5cdf7;font-size:.9rem;}
+  @media (max-width:820px){ .why .wrap{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .why .wrap{grid-template-columns:1fr;} }
+
+  /* ---------- Pricing ---------- */
+  .pricing-note{
+    background:var(--pink-light);color:#9c2a5c;border-radius:14px;padding:14px 18px;
+    font-size:.88rem;font-weight:600;margin-bottom:40px;display:inline-block;
+  }
+  .pricing-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+  .price-card{
+    background:#fff;border-radius:18px;padding:26px 22px;border:1px solid rgba(28,31,122,.08);
+    box-shadow:0 14px 30px -24px rgba(18,21,79,.35);
+  }
+  .price-card h4{font-family:'Baloo 2';color:var(--navy);font-size:1.05rem;margin-bottom:16px;}
+  .price-card ul{list-style:none;margin:0;padding:0;}
+  .price-card li{
+    display:flex;justify-content:space-between;gap:10px;
+    font-size:.85rem;padding:10px 0;border-top:1px dashed rgba(28,31,122,.15);color:var(--ink-soft);
+  }
+  .price-card li:first-of-type{border-top:none;}
+  .price-card li b{color:var(--navy);font-weight:700;white-space:nowrap;}
+  @media (max-width:1050px){ .pricing-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .pricing-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Process ---------- */
+  .process{background:#fff;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step;}
+  .step{position:relative;padding-top:8px;}
+  .step .num{
+    font-family:'Baloo 2';font-size:2.6rem;font-weight:800;color:var(--sky-light);
+    -webkit-text-stroke:2px var(--sky);
+    margin-bottom:10px;display:block;
+  }
+  .step h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+  .step p{font-size:.88rem;}
+  @media (max-width:820px){ .steps{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .steps{grid-template-columns:1fr;} }
+
+  /* ---------- About ---------- */
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about-photo{border-radius:24px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(18,21,79,.4);}
+  .about ul{list-style:none;padding:0;margin:20px 0 0;}
+  .about li{padding-left:30px;position:relative;margin-bottom:12px;font-size:.95rem;color:var(--ink-soft);}
+  .about li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    width:20px;height:20px;border-radius:50%;background:var(--sky);color:#fff;
+    font-size:.7rem;display:flex;align-items:center;justify-content:center;font-weight:800;
+  }
+  @media (max-width:860px){ .about .wrap{grid-template-columns:1fr;} }
+
+  /* ---------- CTA banner ---------- */
+  .cta-banner{
+    background:linear-gradient(120deg, var(--pink), #ff9ac2);
+    border-radius:32px;padding:52px 40px;color:#fff;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;
+    max-width:1180px;margin:0 auto;
+  }
+  .cta-banner h2{font-size:1.9rem;max-width:480px;}
+  .cta-banner .btn-primary{background:#fff;color:var(--pink);box-shadow:none;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--navy-deep);color:#fff;}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .contact-info .row{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px;}
+  .contact-info .row .ic{
+    width:42px;height:42px;border-radius:12px;background:rgba(72,195,240,.18);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.15rem;
+  }
+  .contact-info .row h4{color:#fff;font-family:'Inter';font-size:.95rem;margin-bottom:3px;}
+  .contact-info .row p{color:#aab3e6;font-size:.88rem;margin:0;}
+  .hours{margin-top:10px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;}
+  .hours div{display:flex;justify-content:space-between;font-size:.86rem;color:#c5cdf7;padding:5px 0;}
+
+  form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:28px;}
+  form label{display:block;font-size:.8rem;font-weight:600;color:#c5cdf7;margin-bottom:6px;}
+  form input, form select, form textarea{
+    width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.06);color:#fff;font-family:'Inter';font-size:.9rem;margin-bottom:16px;
+  }
+  form input::placeholder, form textarea::placeholder{color:#8890c0;}
+  form button{
+    width:100%;padding:14px;border:none;border-radius:100px;background:var(--sky);
+    color:var(--navy-deep);font-weight:800;font-size:.95rem;cursor:pointer;
+  }
+
+  footer{background:var(--navy-deep);color:#8890c0;padding:28px 0;border-top:1px solid rgba(255,255,255,.08);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{max-width:420px;}
+    .hero h1{font-size:2.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="safi">safi</span><span class="sana">Sana</span><span class="brand-tag">LAUNDRY &amp; CLEANING</span></a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:0799180162" class="nav-cta">Call 0799 180162</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="bubble" style="width:120px;height:120px;top:60px;right:120px;"></div>
+  <div class="bubble" style="width:60px;height:60px;top:200px;right:60px;"></div>
+  <div class="bubble" style="width:34px;height:34px;top:130px;right:220px;"></div>
+  <div class="bubble" style="width:90px;height:90px;bottom:120px;left:-30px;"></div>
+  <div class="wrap">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Now open in Utawala Airways</div>
+      <h1>Laundry &amp; cleaning, <em>done sana well.</em></h1>
+      <p class="lede">From weekly laundry to carpets, sofas, tiles and windows — Safi Sana handles the dirty work across Nairobi, with free pickup and delivery on every laundry order.</p>
+      <div class="hero-actions">
+        <a href="tel:0799180162" class="btn btn-primary">📞 Call 0799 180162</a>
+        <a href="#services" class="btn btn-ghost">See all services</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>20%</strong><span>off your first order</span></div>
+        <div><strong>Free</strong><span>pickup &amp; delivery</span></div>
+        <div><strong>5</strong><span>services under one roof</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?fm=jpg&q=80&w=900&auto=format&fit=crop" alt="Washer and dryer in a bright laundry room">
+      <div class="tag">Fresh loads, folded and delivered to your door 🧺</div>
+    </div>
+  </div>
+  <div class="wave-divider"></div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-row"><span class="kicker">What we do</span></div>
+      <h2>One call for everything that needs cleaning</h2>
+      <p>Book a single service or bundle them — our team brings the equipment, products and know-how for fabric, floors and glass alike.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card service-tall">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Laundry service - washer and dryer"></div>
+        <div class="body">
+          <h3>Laundry &amp; Dry Cleaning</h3>
+          <p>Wash &amp; fold, dry cleaning and ironing for everyday wear, delicates and household linen — collected and returned to your door.</p>
+          <div class="from">From KES 150<small> /kg</small></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1580256081112-e49377338b7f?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Carpet cleaning equipment on a hallway carpet"></div>
+        <div class="body">
+          <h3>Carpet Cleaning</h3>
+          <p>Deep steam and shampoo cleaning that lifts stains, dust and odours from rugs and wall-to-wall carpet.</p>
+          <div class="from">From KES 250<small> /sqm</small></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Cleaner vacuuming an upholstered ottoman"></div>
+        <div class="body">
+          <h3>Sofa &amp; Upholstery</h3>
+          <p>Sofas, seats and cushions deep-cleaned to remove dust mites, stains and everyday odours — safe for fabric and leather.</p>
+          <div class="from">From KES 1,000<small> /seat</small></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1600328604921-300918f36018?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Clean white and brown floor tiles"></div>
+        <div class="body">
+          <h3>Floor &amp; Wall Tiles</h3>
+          <p>Scrubbing and grout treatment for kitchen, bathroom and outdoor tiled floors and walls, leaving surfaces streak-free.</p>
+          <div class="from">From KES 150<small> /sqm</small></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1512479373983-bd28a541041b?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Cleaner wiping down a glass window"></div>
+        <div class="body">
+          <h3>Window Cleaning</h3>
+          <p>Streak-free interior and exterior glass, frames and sills for homes, offices and shopfronts.</p>
+          <div class="from">From KES 150<small> /pane</small></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="why-item">
+      <div class="icon">🚚</div>
+      <h3>Free pickup &amp; delivery</h3>
+      <p>We collect and drop off laundry orders at no extra cost within our service area.</p>
+    </div>
+    <div class="why-item">
+      <div class="icon">🏷️</div>
+      <h3>20% off first order</h3>
+      <p>New customers get 20% off their very first booking, any service.</p>
+    </div>
+    <div class="why-item">
+      <div class="icon">🧽</div>
+      <h3>Trained, insured team</h3>
+      <p>Vetted cleaners using professional-grade equipment and safe products.</p>
+    </div>
+    <div class="why-item">
+      <div class="icon">⏱️</div>
+      <h3>Fast turnaround</h3>
+      <p>Most laundry orders are back with you within 24–48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-row"><span class="kicker">Pricing</span></div>
+      <h2>Simple, upfront rates</h2>
+      <span class="pricing-note">💡 Starter rates in KES — final quote confirmed after we see the job. Bulk &amp; whole-home discounts available.</span>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h4>🧺 Laundry</h4>
+        <ul>
+          <li>Wash &amp; fold <b>KES 150/kg</b></li>
+          <li>Dry cleaning (per item) <b>from KES 250</b></li>
+          <li>Ironing only <b>KES 100/item</b></li>
+          <li>Duvets &amp; blankets <b>from KES 600</b></li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h4>🧴 Carpet</h4>
+        <ul>
+          <li>Small rug <b>KES 1,500</b></li>
+          <li>Per sqm (fitted carpet) <b>KES 250</b></li>
+          <li>Staircase runner <b>from KES 1,200</b></li>
+          <li>Whole house <b>from KES 6,000</b></li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h4>🛋️ Sofa &amp; Upholstery</h4>
+        <ul>
+          <li>Single seat / ottoman <b>KES 1,000</b></li>
+          <li>2-seater sofa <b>KES 2,500</b></li>
+          <li>3-seater sofa <b>KES 3,500</b></li>
+          <li>5–7 seater set <b>from KES 6,000</b></li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h4>🧱 Floors &amp; Tiles</h4>
+        <ul>
+          <li>Tile deep clean <b>KES 150/sqm</b></li>
+          <li>Grout scrubbing <b>+KES 50/sqm</b></li>
+          <li>Bathroom package <b>from KES 2,500</b></li>
+          <li>Wall tile clean <b>from KES 180/sqm</b></li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h4>🪟 Windows</h4>
+        <ul>
+          <li>Per pane <b>KES 150</b></li>
+          <li>Full house (≤10 panes) <b>KES 3,500</b></li>
+          <li>Office/shopfront <b>from KES 4,500</b></li>
+          <li>High-rise exterior <b>quote on request</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-row"><span class="kicker">How it works</span></div>
+      <h2>Booking is four steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Call or WhatsApp</h3>
+        <p>Tell us what needs cleaning and where — we quote on the spot.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>We collect / arrive</h3>
+        <p>Laundry gets picked up free; carpet, sofa, tile and window jobs are done on-site.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Deep clean</h3>
+        <p>Our trained team gets to work with the right products for the job.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>Delivered fresh</h3>
+        <p>Laundry is folded and delivered back; every job finishes with a quick quality check.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-photo">
+      <img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?fm=jpg&q=80&w=900&auto=format&fit=crop" alt="Cleaner mopping a bright modern living room floor">
+    </div>
+    <div>
+      <div class="eyebrow-row"><span class="kicker">About Safi Sana</span></div>
+      <h2 style="font-size:2rem;color:var(--navy);margin-bottom:14px;">Nairobi's home for laundry and full-home cleaning</h2>
+      <p>Safi Sana started as a neighbourhood laundry in Utawala and has grown into a full cleaning company — because once you trust someone with your clothes, you want them handling your carpets, sofas and windows too.</p>
+      <ul>
+        <li>Locally based in Utawala Airways, serving Nairobi and surrounding areas</li>
+        <li>Professional-grade machines and eco-conscious detergents</li>
+        <li>Flexible booking by phone or WhatsApp — no app required</li>
+        <li>Transparent, upfront pricing with no hidden charges</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta-banner">
+    <h2>Ready for a spotless home? Get 20% off your first order.</h2>
+    <a href="tel:0799180162" class="btn btn-primary">📞 Book now — 0799 180162</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <div class="eyebrow-row"><span class="kicker" style="color:var(--sky);">Get in touch</span></div>
+      <h2 style="color:#fff;font-size:2rem;margin-bottom:24px;">Let's talk about your cleaning</h2>
+
+      <div class="row">
+        <div class="ic">📞</div>
+        <div><h4>Call or WhatsApp</h4><p>0799 180162</p></div>
+      </div>
+      <div class="row">
+        <div class="ic">📍</div>
+        <div><h4>Location</h4><p>Utawala Airways, Nairobi</p></div>
+      </div>
+      <div class="row">
+        <div class="ic">✉️</div>
+        <div><h4>Email</h4><p>hello@safisana.co.ke</p></div>
+      </div>
+
+      <div class="hours">
+        <div><span>Monday – Saturday</span><span>7:00 AM – 7:00 PM</span></div>
+        <div><span>Sunday</span><span>9:00 AM – 4:00 PM</span></div>
+      </div>
+    </div>
+
+    <form onsubmit="event.preventDefault(); alert('Thanks! We will get back to you shortly.');">
+      <label for="name">Full name</label>
+      <input id="name" type="text" placeholder="Your name" required>
+
+      <label for="phone">Phone number</label>
+      <input id="phone" type="tel" placeholder="07xx xxx xxx" required>
+
+      <label for="service">Service needed</label>
+      <select id="service">
+        <option>Laundry &amp; Dry Cleaning</option>
+        <option>Carpet Cleaning</option>
+        <option>Sofa &amp; Upholstery</option>
+        <option>Floor &amp; Wall Tiles</option>
+        <option>Window Cleaning</option>
+        <option>Not sure yet</option>
+      </select>
+
+      <label for="msg">Tell us about the job</label>
+      <textarea id="msg" rows="3" placeholder="E.g. 3-seater sofa + living room carpet"></textarea>
+
+      <button type="submit">Request a quote</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Safi Sana Laundry &amp; Cleaning. All rights reserved.</span>
+    <span>Utawala Airways, Nairobi · 0799 180162</span>
+  </div>
+</footer>
+
+</body>
+</html>
